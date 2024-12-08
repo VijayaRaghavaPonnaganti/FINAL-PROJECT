@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f9; margin: 0; padding: 0;">
+    <div style="max-width: 500px; margin: 50px auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+        <h1 style="text-align: center; color: #333;">Admin Login</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; margin-bottom: 5px;">{{ form.username.label }}</label>
+                {{ form.username }}
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; margin-bottom: 5px;">{{ form.password.label }}</label>
+                {{ form.password }}
+            </div>
+            <button type="submit" style="display: block; width: 100%; padding: 10px; background-color: #007bff; color: white; text-align: center; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Login</button>
+        </form>
+    </div>
+</body>
+</html>

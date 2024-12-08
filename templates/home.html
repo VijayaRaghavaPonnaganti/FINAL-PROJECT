@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f9; margin: 0; padding: 0;">
+
+    <div style="max-width: 800px; margin: 50px auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+        <h1 style="text-align: center; color: #333;">Upcoming Events</h1>
+        
+        <ul style="list-style-type: none; padding: 0;">
+            {% for event in events %}
+            <li style="margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
+                <strong style="font-size: 18px; color: #333;">{{ event.name }}</strong><br>
+                <span style="color: #555; font-size: 14px;">{{ event.description }}</span><br>
+                <span style="color: #007bff; font-size: 14px;">Date: {{ event.date }}</span><br>
+                <span style="color: #007bff; font-size: 14px;">Location: {{ event.location }}</span><br>
+                
+                <!-- Add margin-top to the "Register" button to add space -->
+                <a href="{{ url_for('main.register_participant', event_id=event.id) }}" 
+                   style="display: inline-block; background-color: #007bff; color: white; padding: 10px 16px; border-radius: 5px; text-decoration: none; font-size: 14px; cursor: pointer; margin-top: 15px;">
+                   Register
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <a href="{{ url_for('main.create_event') }}" 
+           style="display: inline-block; background-color: #28a745; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-size: 16px; text-align: center; margin-top: 20px;">Create New Event</a>
+    </div>
+
+</body>
+</html>

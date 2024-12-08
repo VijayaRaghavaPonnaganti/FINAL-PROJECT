@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Participants for {{ event.name }}</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f9; margin: 0; padding: 0;">
+
+    <div style="max-width: 800px; margin: 50px auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+        <h1 style="text-align: center; color: #333;">Participants for {{ event.name }}</h1>
+
+        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+            <thead>
+                <tr style="background-color: #007bff; color: white;">
+                    <th style="padding: 10px; text-align: left; font-size: 16px;">Name</th>
+                    <th style="padding: 10px; text-align: left; font-size: 16px;">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for participant in participants %}
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 10px; font-size: 14px;">{{ participant.name }}</td>
+                    <td style="padding: 10px; font-size: 14px;">{{ participant.email }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ url_for('main.admin_dashboard') }}" 
+           style="display: inline-block; background-color: #28a745; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-size: 16px; text-align: center; margin-top: 20px;">Back to Dashboard</a>
+    </div>
+
+</body>
+</html>
