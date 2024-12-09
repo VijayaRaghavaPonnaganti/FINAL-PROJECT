@@ -21,7 +21,7 @@ def create_app():
     app.config['MAIL_USE_TLS'] = True
     app.config['MAIL_USE_SSL'] = False
     app.config['ADMIN_USERNAME'] = 'admin'
-    app.config['ADMIN_PASSWORD'] = 'password'  # Use a secure password in production
+    app.config['ADMIN_PASSWORD'] = 'password' 
     app.config['SECRET_KEY'] = 'your_secure_secret_key'
 
     
